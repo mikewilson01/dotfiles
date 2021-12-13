@@ -1,0 +1,12 @@
+[alias]
+    c = commit -am
+    up = pull --prune
+    p = push
+    s = status -s
+    df = diff --color --color-words --abbrev
+    co = checkout
+    cob = checkout -b
+    cm = !git add -A && git commit -m
+
+[init]
+    defaultBranch = main
