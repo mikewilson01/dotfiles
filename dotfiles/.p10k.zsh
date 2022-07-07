@@ -107,7 +107,8 @@
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # wifi                  # wifi speed
-    # example               # example user-defined segment (see prompt_example function below)
+    example                 # example user-defined segment (see prompt_example function below)
+    my_spin_name
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -1572,6 +1573,15 @@
     # instant_prompt_example. This will give us the same `example` prompt segment in the instant
     # and regular prompts.
     prompt_example
+  }
+
+  function prompt_my_spin_name() {
+    _spin_fqdn = $(cat /etc/spin/machine/fqdn | sed "s/\\..*//")
+    p10k segment -f 208 -t ${_spin_fqdn}
+  }
+
+  function instant_prompt_my_spin_name() {
+    prompt_my_spin_name
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
