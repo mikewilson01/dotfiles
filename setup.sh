@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-# Link dotfiles
-ln -sf ~/dotfiles/.gitignore ~/.gitignore
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-
 backup_and_link() {
   local DESIRED_FILE=$1
   local BACKUP_FILE_NAME=$2
@@ -60,3 +56,11 @@ for file in ~/dotfiles/dotfiles/*(DN); do
 
   backup_and_link $NEW_PATH $NEW_PATH.backup $file
 done
+
+git config --global alias.s 'status -s'
+git config --global alias.up 'pull --prune'
+git config --global alias.co 'checkout'
+git config --global alias.cob 'checkout -b'
+git config --global alias.p 'push'
+git config --global alias.df 'diff --color --color-words --abbrev'
+git config --global alias.cm '!git add -A && git commit -m'
