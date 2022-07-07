@@ -1578,8 +1578,7 @@
   }
 
   function prompt_my_spin_name() {
-    _spin_fqdn = $(cat /etc/spin/machine/fqdn | sed "s/\\..*//")
-    p10k segment -f 208 -t ${_spin_fqdn}
+    p10k segment -f 208 -t $(cat /etc/spin/machine/fqdn | sed "s/\\..*//")
   }
 
   function instant_prompt_my_spin_name() {
