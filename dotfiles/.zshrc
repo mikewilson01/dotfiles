@@ -114,3 +114,4 @@ source $ZSH/oh-my-zsh.sh
 # Machine based config, not shared between environments
 [[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
 
+source ~/.functions.zsh
